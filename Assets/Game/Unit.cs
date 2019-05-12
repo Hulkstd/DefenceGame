@@ -83,6 +83,8 @@ public class Unit : MonoBehaviour
             }
             Hp -= damage;
 
+            Debug.Log(gameObject.name + "가 공격받고 있다!");
+
         }       
     }
 
@@ -113,7 +115,7 @@ public class Unit : MonoBehaviour
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
             atkcorutin = Attacked(unit.Attack, unit);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
 
-            //Debug.Log(gameObject.name + ", " + unit.name);
+            Debug.Log(gameObject.name + ", " + unit.name);
 
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));

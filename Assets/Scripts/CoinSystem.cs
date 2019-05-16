@@ -11,7 +11,7 @@ public class CoinSystem : MonoBehaviour
     private static int upgradeCount;
     private delegate void UpdateSomething();
     private static UpdateSomething UpdateValue;
-
+    
     [SerializeField]
     private Button UpgradeButton;
     [SerializeField]

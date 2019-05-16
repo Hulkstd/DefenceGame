@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CoinSystem : MonoBehaviour
 {
     private static CoinSystem instance;
     private static int coin;
-    private static int poison;
+    private static int essence;
     private static int upgradeCount;
     private delegate void UpdateSomething();
     private static UpdateSomething UpdateValue;
@@ -20,7 +18,7 @@ public class CoinSystem : MonoBehaviour
     private Text CoinText;
     [SerializeField]
     private Text PoisonText;
-    [SerializeField, Range(1, 3)]
+    [SerializeField, Range(1, 23)]
     private int Stage = 0;
     [SerializeField]
     private int[] MaxCoin = new int[] { 20, 40, 60 };
@@ -30,7 +28,9 @@ public class CoinSystem : MonoBehaviour
     private int[] UpgradeCoin = new int[] { 10, 30, -1 };
     [SerializeField]
     private string[] UpgradeText = new string[] { "1단계", "2단계", "MAX" };
-    
+
+    #region Property
+
     public static CoinSystem Instance
     {
         get
@@ -63,15 +63,15 @@ public class CoinSystem : MonoBehaviour
         }
     }
 
-    public static int Poison
+    public static int Essence
     {
         get
         {
-            return poison;
+            return essence;
         }
         private set
         {
-            poison = value;
+            essence = value;
             UpdateValue();
         }
         
@@ -88,6 +88,8 @@ public class CoinSystem : MonoBehaviour
         }
         
     }
+
+    #endregion
 
     public static void SpawnObject(int Cost)
     {
@@ -122,7 +124,7 @@ public class CoinSystem : MonoBehaviour
     private void UpdateText()
     {
         CoinText.text = Coin.ToString();
-        PoisonText.text = Poison.ToString();
+        PoisonText.text = Essence.ToString();
 
         if (UpgradeCoin[UpgradeCount] != -1)
             UpgradeButtonEffect.color = new Color(1, 1, 1, (float)Coin / UpgradeCoin[UpgradeCount]);

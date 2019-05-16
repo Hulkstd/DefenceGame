@@ -8,11 +8,11 @@ using UnityEngine.UI;
 public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
     [SerializeField]
-    private int CharacterNum;
+    public int CharacterNum;
     [SerializeField]
-    private CreateCharacter createCharacter;
+    public CreateCharacter createCharacter;
     [SerializeField]
-    private CoolDown CoolTime;
+    public CoolDown CoolTime;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -30,7 +30,5 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         createCharacter.StillHoldOn = false;
-
-        /* 위치 계산 및 소환 */
     }
 }

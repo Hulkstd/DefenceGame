@@ -10,6 +10,7 @@ TagManager:
   - ER
   - HealthBoxUI
   - Boss_Captain
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

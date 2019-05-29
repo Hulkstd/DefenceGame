@@ -14,7 +14,7 @@ public enum EnemyType { Pirate = 0, }
 public class LevelManager : MonoBehaviour
 {
     public Transform[] points; // enemy가 생성될 Points
-    public List<Enemies> enemies; // enemy 프리팹
+    public List<Enemies> enemies = new List<Enemies>(); // enemy 프리팹
     public int enemyNum; // 몇 명의 enemy가 나오는지
 
     private void Start()
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
         {
             int idx = Random.Range(0, points.Length);
 
-            Instantiate(enemies[0], points[idx]);
+ //           Instantiate(enemies[0], points[idx]);
             //Debug.Log("Enemy created on" + points[idx].name);
             enemyNum--;
             yield return new WaitForSeconds(2f);

@@ -9,9 +9,7 @@ public class Enemies
 
 //    Enemies(Types types, intCount)
 }
-public enum{
-
-}
+public enum EnemyType { Pirate = 0, }
 
 public class LevelManager : MonoBehaviour
 {

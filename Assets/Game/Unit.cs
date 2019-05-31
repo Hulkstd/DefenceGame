@@ -83,9 +83,9 @@ public class Unit : MonoBehaviour
             }
             Hp -= damage;
 
-            Debug.Log(gameObject.name + "가 공격받고 있다!");
+            //Debug.Log(gameObject.name + "가 공격받고 있다!");
 
-        }       
+        }
     }
 
     public IEnumerator CheckHP(Unit unit)

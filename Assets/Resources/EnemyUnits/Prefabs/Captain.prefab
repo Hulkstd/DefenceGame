@@ -709,7 +709,6 @@ GameObject:
   - component: {fileID: 984259395873591954}
   - component: {fileID: 665990057719785821}
   - component: {fileID: 1665373337497941386}
-  - component: {fileID: 480303469101241468}
   - component: {fileID: 3595012093007178156}
   m_Layer: 0
   m_Name: Captain
@@ -819,18 +818,6 @@ MonoBehaviour:
     type: 3}
   Collider2D: {fileID: 8586376578100378284}
   isattacked: 0
---- !u!114 &480303469101241468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900039408099082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4998326abe80cb341a115cb2f6d88ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &3595012093007178156
 Animator:
   serializedVersion: 3

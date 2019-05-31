@@ -70,7 +70,7 @@ public class Unit : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public IEnumerator Attacked(int damage, Unit unit)//공격받는 코루틴
+    public IEnumerator Attacked(int damage)//공격받는 코루틴
     {
         isattacked = true;
         while (true)
@@ -81,14 +81,9 @@ public class Unit : MonoBehaviour
                 break;
             }
             Hp -= damage;
-
-<<<<<<< HEAD:Assets/Game/Unit.cs
             //Debug.Log(gameObject.name + "가 공격받고 있다!");
 
         }
-=======
-        }       
->>>>>>> 182ed3e6e3b88e9b1fa926919b4615ceb905471e:Assets/Resources/Unit.cs
     }
 
     public IEnumerator CheckHP(Unit unit)
@@ -116,7 +111,7 @@ public class Unit : MonoBehaviour
         if(collision.gameObject.CompareTag(tag))
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
-            atkcorutin = Attacked(unit.Attack, unit);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
+            atkcorutin = Attacked(unit.Attack);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
 
             Debug.Log(gameObject.name + ", " + unit.name);
 

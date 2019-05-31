@@ -20,4 +20,14 @@ public class Captain : Unit
     {
         TriggerEnter(collision, "AR");
     }
+
+    private void OnEnable()
+    {
+        SpeedUp();
+    }
+
+    private void OnDisable()
+    {
+        SpeedDown();
+    }
 }

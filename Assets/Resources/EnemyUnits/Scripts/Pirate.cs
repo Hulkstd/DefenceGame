@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Pirate : Unit
 {
-    private float parentSpeed;
 
     private void Awake()
     {
@@ -12,7 +11,7 @@ public class Pirate : Unit
     }
 
     private void Update()
-    {
+    {        
         Loop();
     }
 

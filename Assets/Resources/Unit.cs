@@ -68,7 +68,6 @@ public class Unit : MonoBehaviour
     public void dead()
     {
         gameObject.SetActive(false);
-
     }
 
     public IEnumerator Attacked(int damage, Unit unit)//공격받는 코루틴
@@ -83,9 +82,13 @@ public class Unit : MonoBehaviour
             }
             Hp -= damage;
 
+<<<<<<< HEAD:Assets/Game/Unit.cs
             //Debug.Log(gameObject.name + "가 공격받고 있다!");
 
         }
+=======
+        }       
+>>>>>>> 182ed3e6e3b88e9b1fa926919b4615ceb905471e:Assets/Resources/Unit.cs
     }
 
     public IEnumerator CheckHP(Unit unit)
@@ -101,7 +104,7 @@ public class Unit : MonoBehaviour
             {
                 unit.Rigibody2D.angularDrag = unit.OriginalSpeed;//충돌 객체의 스피드 원래대로 돌려놈
                 unit.isattacked = false;//충돌 객체의 공격 여부 false로 지정
-                Invoke("dead", 0.5f);
+                Invoke("dead", 0.2f);
             }
 
             yield return new WaitForEndOfFrame();

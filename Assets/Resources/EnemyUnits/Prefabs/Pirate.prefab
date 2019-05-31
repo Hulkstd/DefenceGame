@@ -423,7 +423,7 @@ MonoBehaviour:
   Rigibody2D: {fileID: 1053914369338819721}
   Speed: 0
   Shield: 0
-  Hp: 1
+  Hp: 2
   Attack: 0
   HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
     type: 3}

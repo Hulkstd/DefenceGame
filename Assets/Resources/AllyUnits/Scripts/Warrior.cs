@@ -12,7 +12,6 @@ public class Warrior : Unit
 
     private void Update()
     {
-        if (Hp <= 0) gameObject.SetActive(false);
         Loop();
     }
 

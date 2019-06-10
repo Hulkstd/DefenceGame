@@ -81,14 +81,8 @@ public class Unit : MonoBehaviour
                 break;
             }
             Hp -= damage;
-<<<<<<< HEAD
-            //Debug.Log(gameObject.name + "가 공격받고 있다!");
-
-        }
-=======
 
         }       
->>>>>>> 0853628d333901ed5b3c1defa5ae408d924881da
     }
 
     public IEnumerator CheckHP(Unit unit)
@@ -115,12 +109,6 @@ public class Unit : MonoBehaviour
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
             atkcorutin = Attacked(unit.Attack);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
-<<<<<<< HEAD
-
-            Debug.Log(gameObject.name + ", " + unit.name);
-
-=======
->>>>>>> 0853628d333901ed5b3c1defa5ae408d924881da
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));
         }
@@ -133,5 +121,10 @@ public class Unit : MonoBehaviour
     public virtual void SpeedDown()
     {
         SpeedWeight -= 0.5f;
+    }
+
+    public Rigidbody2D GetRigidbody2D()
+    {
+        return Rigibody2D;
     }
 }

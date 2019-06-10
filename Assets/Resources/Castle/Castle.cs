@@ -16,7 +16,7 @@ public class Castle : MonoBehaviour
         if(coll.gameObject.CompareTag(tag))
         {
             Unit unit = coll.GetComponent<Unit>();
-            StartCoroutine(Attacked((int)unit..mass));
+            StartCoroutine(Attacked((int)unit.GetRigidbody2D().mass));
             StartCoroutine(CheckHP());
         }
     }

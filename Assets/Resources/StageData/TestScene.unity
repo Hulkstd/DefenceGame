@@ -779,7 +779,7 @@ MonoBehaviour:
   Characters:
   - {fileID: 1824416424260298, guid: 79639b84e20f0ea4694165c0d4554387, type: 3}
   MovableObject: {fileID: 911299763}
-  font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
+  font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &719600916
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -122,4 +122,9 @@ public class Unit : MonoBehaviour
     {
         SpeedWeight -= 0.5f;
     }
+
+    public Rigidbody2D GetRigidbody2D()
+    {
+        return Rigibody2D;
+    }
 }

@@ -85,7 +85,11 @@ public class Unit : MonoBehaviour
             }
             Hp -= damage;
 
+<<<<<<< HEAD
         }
+=======
+        }       
+>>>>>>> f994ef3f59c52dcb32ece418b2cf46154bdf395f
     }
 
     public IEnumerator CheckHP(Unit unit)
@@ -119,7 +123,11 @@ public class Unit : MonoBehaviour
         if (collision.gameObject.CompareTag(tag))
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
+<<<<<<< HEAD
             atkcorutin = Attacked(unit.Attack,unit);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
+=======
+            atkcorutin = Attacked(unit.Attack);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
+>>>>>>> f994ef3f59c52dcb32ece418b2cf46154bdf395f
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));
         }

@@ -15,8 +15,13 @@ public class Castle : MonoBehaviour
         //Debug.Log(gameObject.name + "충돌함" + coll.name);
         if(coll.gameObject.CompareTag(tag))
         {
+<<<<<<< HEAD
             Debug.Log(gameObject.name + "충돌함" + coll.name);
             StartCoroutine(Attacked((int)coll.transform.parent.GetComponent<Rigidbody2D>().mass));
+=======
+            Unit unit = coll.GetComponent<Unit>();
+            StartCoroutine(Attacked((int)unit.GetRigidbody2D().mass));
+>>>>>>> f994ef3f59c52dcb32ece418b2cf46154bdf395f
             StartCoroutine(CheckHP());
         }
     }

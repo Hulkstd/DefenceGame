@@ -33,13 +33,13 @@ public class LoadMonsterData : MonoBehaviour
     private static readonly string MonsterDataPath = @"EnemyUnits/Prefabs";
     public static int StageNumber = 1;
     public static readonly Vector2[] PosArr = { new Vector2(5, 2), new Vector2(5, 1), new Vector2(5, 0), new Vector2(5, -1), new Vector2(5, -2) };
-    
+
     public void SpawnMonster(MonsterData Md)
     {
         Transform Enemy = Instantiate(Resources.Load<Transform>(MonsterDataPath + GetMonsterDataPath(Md.EnemyTy))); // 만들고
         Enemy.position = PosArr[Random.Range(0, 4)]; // 랜덤 배치
     }
-    
+
     private EnemyType ToEnemy(int num) // int.ToEnemy
     {
         switch (num)
@@ -68,32 +68,35 @@ public class LoadMonsterData : MonoBehaviour
     public void LoadData()
     {
         MonsterDatas = new List<MonsterData>();
-        string[] strs = File.ReadAllLines(@"Resources/StageData/Stage" + StageNumber);
-        string buffer = "";
-        int Count;
-        
-        foreach (string str in strs)
+
+        using (StreamReader Stream = new StreamReader("Resources/StageData/Stage" + StageNumber + ".txt"))
         {
             MonsterData Md = new MonsterData();
-            Count = 0;
+            int Count;
+            int TypeNumber = int.Parse(Stream.ReadLine());
+            string buffer = "";
 
-            foreach (char ch in str)
+            for (int i = 0; i < TypeNumber; ++i)
             {
-                if (ch == ' ')
+                Count = 0;
+                string str = Stream.ReadLine();
+                foreach (char ch in str)
                 {
-                    if (Count == 0) { Md.EnemyTy = ToEnemy(int.Parse(buffer)); }
-                    else if (Count == 1) { Md.Count = int.Parse(buffer); }
-                    else { Md.Times.Add(int.Parse(buffer)); }
+                    if (ch == ' ')
+                    {
+                        if (Count == 0) { Md.EnemyTy = ToEnemy(int.Parse(buffer)); }
+                        else if (Count == 1) { Md.Count = int.Parse(buffer); }
+                        else { Md.Times.Add(int.Parse(buffer)); }
 
-                    Count++;
-                    buffer = "";
+                        Count++;
+                        buffer = "";
+                    }
+                    buffer += ch;
                 }
-                buffer += ch;
             }
-            MonsterDatas.Add(Md);
         }
     }
-    
+
     private IEnumerator MonsterSpawnCoroutine()
     {
         while (true)

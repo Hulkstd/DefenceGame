@@ -12,11 +12,11 @@ public class Castle : MonoBehaviour
 
     protected virtual void TriggerEnter(Collider2D coll, string tag)
     {
-        Debug.Log(gameObject.name + "충돌함");
+        //Debug.Log(gameObject.name + "충돌함" + coll.name);
         if(coll.gameObject.CompareTag(tag))
         {
-            Unit unit = coll.GetComponent<Unit>();
-            StartCoroutine(Attacked((int)unit..mass));
+            Debug.Log(gameObject.name + "충돌함" + coll.name);
+            StartCoroutine(Attacked((int)coll.transform.parent.GetComponent<Rigidbody2D>().mass));
             StartCoroutine(CheckHP());
         }
     }

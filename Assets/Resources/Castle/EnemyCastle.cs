@@ -12,6 +12,7 @@ public class EnemyCastle : Castle
 
     public override void GameEnd()
     {
-        Debug.Log("Game over..");
+        Debug.Log("Game Clear!");
+        //적 성 체력 다 닳으면 어케할지 정하셈
     }
 }

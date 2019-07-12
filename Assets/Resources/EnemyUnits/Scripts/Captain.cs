@@ -5,6 +5,7 @@ using UnityEngine;
 public class Captain : Unit
 {
     private float parentSpeed;
+    public BossPassive bossPassive;
 
     private void Awake()
     {
@@ -29,5 +30,8 @@ public class Captain : Unit
     private void OnDisable()
     {
         SpeedDown();
+        bossPassive.Recovered();
     }
+
+    
 }

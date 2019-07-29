@@ -6,18 +6,25 @@ public class Castle : MonoBehaviour
 {
     public float OriginalHP;
     public float hp;
-
     private bool isAttacked;
 
+
+    private void Update()
+    {
+        
+    }
 
     protected virtual void TriggerEnter(Collider2D coll, string tag)
     {
         //Debug.Log(gameObject.name + "충돌함" + coll.name);
         if(coll.gameObject.CompareTag(tag))
         {
+<<<<<<< HEAD
             Debug.Log("Castle" + gameObject.name + "충돌함" + coll.name);
             Unit unit = coll.GetComponentInParent<Unit>();
             StartCoroutine(Attacked((int)unit.GetRigidbody2D().mass));
+=======
+>>>>>>> 60d2dd0714bf273f4cc7b71060e9bd9eb36a4be0
             Debug.Log(gameObject.name + "충돌함" + coll.name);
             StartCoroutine(Attacked((int)coll.transform.parent.GetComponent<Rigidbody2D>().mass));
             StartCoroutine(CheckHP());

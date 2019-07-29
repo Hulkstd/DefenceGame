@@ -33,7 +33,7 @@ public class Unit : MonoBehaviour
     {
         Collider2D.size = new Vector2(Rigibody2D.drag, Collider2D.size.y);//콜리더 사이즈를 drag(사정거리)에 맞게 적용
         Speed = Rigibody2D.angularDrag;// 실제 이동 스피드 적용
-        Attack = (int)Rigibody2D.mass; //attack은 mass  
+        Attack = (int)Rigibody2D.mass; //attack은 mass
 
         HealthBoxUI = GameObject.FindGameObjectWithTag("HealthBoxUI").transform; //HP바 적용
         HealthBox = Instantiate(HealthBoxPref, HealthBoxUI, false);
@@ -151,5 +151,15 @@ public class Unit : MonoBehaviour
         Hp = OriginalHp;
         Rigibody2D.angularDrag = OriginalSpeed;
         isattacked = 0;
+    }
+
+    public int GetHP()
+    {
+        return Hp;
+    }
+
+    public void Healing(int healPower)
+    {
+        Hp += healPower;
     }
 }

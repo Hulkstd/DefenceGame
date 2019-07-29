@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CFreshUndead : Unit
+public class ForsetElite : Unit
 {
     private void Awake()
     {

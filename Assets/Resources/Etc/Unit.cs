@@ -33,7 +33,7 @@ public class Unit : MonoBehaviour
     {
         Collider2D.size = new Vector2(Rigibody2D.drag, Collider2D.size.y);//콜리더 사이즈를 drag(사정거리)에 맞게 적용
         Speed = Rigibody2D.angularDrag;// 실제 이동 스피드 적용
-        Attack = (int)Rigibody2D.mass; //attack은 mass  
+        Attack = (int)Rigibody2D.mass; //attack은 mass
 
         HealthBoxUI = GameObject.FindGameObjectWithTag("HealthBoxUI").transform; //HP바 적용
         HealthBox = Instantiate(HealthBoxPref, HealthBoxUI, false);
@@ -85,11 +85,6 @@ public class Unit : MonoBehaviour
             }
             Hp -= damage;
         }
-
-<<<<<<< HEAD
-             
-=======
->>>>>>> e99bd78576bf01ffd54a61ed09703d92632853de
     }
 
     public IEnumerator CheckHP(Unit unit)
@@ -123,10 +118,6 @@ public class Unit : MonoBehaviour
         if (collision.gameObject.CompareTag(tag))
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
-<<<<<<< HEAD
-=======
-
->>>>>>> e99bd78576bf01ffd54a61ed09703d92632853de
             atkcorutin = Attacked(unit.Attack,unit);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));
@@ -157,5 +148,15 @@ public class Unit : MonoBehaviour
         Hp = OriginalHp;
         Rigibody2D.angularDrag = OriginalSpeed;
         isattacked = 0;
+    }
+
+    public int GetHP()
+    {
+        return Hp;
+    }
+
+    public void Healing(int healPower)
+    {
+        Hp += healPower;
     }
 }

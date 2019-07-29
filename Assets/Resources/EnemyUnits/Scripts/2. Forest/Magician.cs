@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CSpearMan : Unit
+public class Magician : Unit
 {
     private void Awake()
     {

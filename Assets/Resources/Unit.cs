@@ -70,7 +70,7 @@ public class Unit : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public IEnumerator Attacked(int damage,Unit unit)//공격받는 코루틴
+    public IEnumerator Attacked(int damage, Unit unit)//공격받는 코루틴
     {
 
         isattacked += 1;
@@ -85,37 +85,35 @@ public class Unit : MonoBehaviour
             }
             Hp -= damage;
         }
-
-<<<<<<< HEAD
-             
-=======
->>>>>>> e99bd78576bf01ffd54a61ed09703d92632853de
     }
 
-    public IEnumerator CheckHP(Unit unit)
-    {
-        while (true)
-        {
-            if (Hp <= 0)
+
+
+      IEnumerator CheckHP(Unit unit)
+      {
+            while (true)
             {
-                
-                Debug.Log(unit.gameObject.name + "이 " + gameObject.name + "을 처치했다!");
-                unit.isattacked -= 1;//충돌 객체의 공격 여부 false로 지정
-                if (unit.isattacked <= 0)
+                if (Hp <= 0)
                 {
-                    unit.Rigibody2D.angularDrag = unit.OriginalSpeed;//충돌 객체의 스피드 원래대로 돌려놈
+
+                    Debug.Log(unit.gameObject.name + "이 " + gameObject.name + "을 처치했다!");
+                    unit.isattacked -= 1;//충돌 객체의 공격 여부 false로 지정
+                    if (unit.isattacked <= 0)
+                    {
+                        unit.Rigibody2D.angularDrag = unit.OriginalSpeed;//충돌 객체의 스피드 원래대로 돌려놈
+                    }
+                    Invoke("dead", 0.2f);
+                    break;
+
                 }
-                Invoke("dead", 0.2f);
-                break;
-                
+                /*if (unit.isattacked <= 0)
+                {
+                    break;
+                }*/
+                yield return new WaitForEndOfFrame();
             }
-            /*if (unit.isattacked <= 0)
-            {
-                break;
-            }*/
-            yield return new WaitForEndOfFrame();
-        }
-    }
+      }
+        
 
 
     public virtual void TriggerEnter(Collider2D collision, string tag)
@@ -123,10 +121,6 @@ public class Unit : MonoBehaviour
         if (collision.gameObject.CompareTag(tag))
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
-<<<<<<< HEAD
-=======
-
->>>>>>> e99bd78576bf01ffd54a61ed09703d92632853de
             atkcorutin = Attacked(unit.Attack,unit);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));

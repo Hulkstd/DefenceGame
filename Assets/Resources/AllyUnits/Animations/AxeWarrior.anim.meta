@@ -1,8 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/AllyUnits/Animations/AxeWarrior.anim.meta
 guid: bfaff9630000d5f4393fdb3fb2ffcbfa
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
+=======
+guid: e333f712e0f4cd54694dff55e08610dc
+timeCreated: 1507393916
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+>>>>>>> 86acc2f5e8645f76dae1c7fc64ee36c750c9aeca:Assets/Resources/EnemyUnits/Prefabs/2. Forest/ForestWarrior.prefab.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

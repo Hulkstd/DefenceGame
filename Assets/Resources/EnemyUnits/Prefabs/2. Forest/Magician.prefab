@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 5240718294687563694}
   - component: {fileID: 512185628325267217}
   - component: {fileID: 2801458076340370299}
-  - component: {fileID: 3865891541342372033}
+  - component: {fileID: 798985749451734914}
   m_Layer: 0
   m_Name: Magician
   m_TagString: Enemy
@@ -1427,7 +1427,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3865891541342372033
+--- !u!114 &798985749451734914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9007841222402119467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edcd1236bf2bca246bed6c4e41d1ff74, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d3f1aaa48c3d494e891042ae8eb5335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Rigibody2D: {fileID: 2801458076340370299}

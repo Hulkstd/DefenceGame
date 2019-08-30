@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UndeadPirate : Unit
+public class Enemy : Unit
 {
     private void Awake()
     {

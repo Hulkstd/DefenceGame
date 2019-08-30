@@ -72,7 +72,6 @@ public class Unit : MonoBehaviour
 
     public IEnumerator Attacked(int damage, Unit unit)//공격받는 코루틴
     {
-
         isattacked += 1;
 
         while (true)
@@ -92,8 +91,6 @@ public class Unit : MonoBehaviour
             {
                 if (Hp <= 0)
                 {
-
-                    Debug.Log(unit.gameObject.name + "이 " + gameObject.name + "을 처치했다!");
                     unit.isattacked -= 1;//충돌 객체의 공격 여부 false로 지정
                     if (unit.isattacked <= 0)
                     {

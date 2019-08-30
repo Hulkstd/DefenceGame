@@ -24,12 +24,12 @@ public class Captain : Unit
 
     private void OnEnable()
     {
-        SpeedUp();
+        SpeedUp(0.5f);
     }
 
     private void OnDisable()
     {
-        SpeedDown();
+        SpeedDown(0.5f);
         bossPassive.Recovered();
     }
 

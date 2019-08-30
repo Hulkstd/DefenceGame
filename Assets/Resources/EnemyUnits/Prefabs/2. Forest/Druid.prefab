@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 6847401891674615157}
   - component: {fileID: 57598533724439768}
   - component: {fileID: 8595487099713706167}
-  - component: {fileID: 362712264615639419}
   m_Layer: 0
   m_Name: Druid
   m_TagString: Enemy
@@ -429,30 +428,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &362712264615639419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401306470602055363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05016c8565fb4e4daaec8ffb49ffbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigibody2D: {fileID: 8595487099713706167}
-  Speed: 0
-  Shield: 0
-  Hp: 3
-  Attack: 0
-  HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
-    type: 3}
-  HealthBoxUI: {fileID: 1981045000442047076, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
-    type: 3}
-  Collider2D: {fileID: 5227022882604124390}
-  isattacked: 0
-  heal: 0
 --- !u!1 &1765876581177540110
 GameObject:
   m_ObjectHideFlags: 0

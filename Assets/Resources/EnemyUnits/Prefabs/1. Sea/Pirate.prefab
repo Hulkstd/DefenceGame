@@ -443,10 +443,12 @@ MonoBehaviour:
   Rigibody2D: {fileID: 1053914369338819721}
   Speed: 0
   Shield: 0
-  Hp: 0
+  Hp: 1
   Attack: 0
-  HealthBoxPref: {fileID: 0}
-  HealthBoxUI: {fileID: 0}
+  HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
+    type: 3}
+  HealthBoxUI: {fileID: 1981045000442047076, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
+    type: 3}
   Collider2D: {fileID: 1862333157462451000}
   isattacked: 0
 --- !u!1 &1560842517373040

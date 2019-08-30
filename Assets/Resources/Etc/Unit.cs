@@ -140,12 +140,6 @@ public class Unit : MonoBehaviour
     {
         return Rigibody2D;
     }
-
-    public virtual void forestabillity()
-    {
-
-    }
-
     public void Reborn()
     {
         Hp = OriginalHp;
@@ -160,6 +154,7 @@ public class Unit : MonoBehaviour
 
     public void Healing(int healPower)
     {
-        Hp += healPower;
+        //if(Hp + healPower <= OriginalHp)
+            Hp += healPower;
     }
 }

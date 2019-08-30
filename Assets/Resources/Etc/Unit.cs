@@ -74,7 +74,6 @@ public class Unit : MonoBehaviour
     {
 
         isattacked += 1;
-        Debug.Log(gameObject.name + "이 " + unit.gameObject.name + "한테 공격당했다." + "/충돌한 개체: " + isattacked);
 
         while (true)
         {
@@ -86,8 +85,6 @@ public class Unit : MonoBehaviour
             Hp -= damage;
         }
     }
-
-
 
       IEnumerator CheckHP(Unit unit)
       {
@@ -106,10 +103,6 @@ public class Unit : MonoBehaviour
                     break;
 
                 }
-                /*if (unit.isattacked <= 0)
-                {
-                    break;
-                }*/
                 yield return new WaitForEndOfFrame();
             }
       }
@@ -127,13 +120,13 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public virtual void SpeedUp()
+    public virtual void SpeedUp(float a)
     {
-        SpeedWeight += 0.5f;
+        SpeedWeight += a;
     }
-    public virtual void SpeedDown()
+    public virtual void SpeedDown(float a)
     {
-        SpeedWeight -= 0.5f;
+        SpeedWeight -= a;
     }
 
     public Rigidbody2D GetRigidbody2D()
@@ -147,14 +140,4 @@ public class Unit : MonoBehaviour
         isattacked = 0;
     }
 
-    public int GetHP()
-    {
-        return Hp;
-    }
-
-    public void Healing(int healPower)
-    {
-        //if(Hp + healPower <= OriginalHp)
-            Hp += healPower;
-    }
 }

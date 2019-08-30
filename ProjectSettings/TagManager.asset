@@ -11,6 +11,8 @@ TagManager:
   - HealthBoxUI
   - Boss_Captain
   - SpawnPoint
+  - AllyCastle
+  - EnemyCastle
   layers:
   - Default
   - TransparentFX

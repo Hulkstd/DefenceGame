@@ -814,7 +814,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1466169791162244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee53d7a0003781740ac289ab01b33e73, type: 3}
+  m_Script: {fileID: 11500000, guid: bfc04c2162dd8a2418e6f30f7aa4282f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Rigibody2D: {fileID: 4823894226524783202}

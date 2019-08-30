@@ -327,8 +327,8 @@ GameObject:
   - component: {fileID: 4530432444723096}
   - component: {fileID: 1053914369338819721}
   - component: {fileID: 6215977921552030718}
-  - component: {fileID: 1873415818732265464}
   - component: {fileID: 2016561257117124761}
+  - component: {fileID: 3675701832142139250}
   m_Layer: 0
   m_Name: Pirate
   m_TagString: Enemy
@@ -409,29 +409,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1873415818732265464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413550271876776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ca07c8e12c48746be34a9b9ffec03b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigibody2D: {fileID: 1053914369338819721}
-  Speed: 0
-  Shield: 0
-  Hp: 2
-  Attack: 0
-  HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
-    type: 3}
-  HealthBoxUI: {fileID: 1981045000442047076, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
-    type: 3}
-  Collider2D: {fileID: 1862333157462451000}
-  isattacked: 0
 --- !u!95 &2016561257117124761
 Animator:
   serializedVersion: 3
@@ -451,6 +428,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3675701832142139250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413550271876776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3f1aaa48c3d494e891042ae8eb5335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigibody2D: {fileID: 1053914369338819721}
+  Speed: 0
+  Shield: 0
+  Hp: 0
+  Attack: 0
+  HealthBoxPref: {fileID: 0}
+  HealthBoxUI: {fileID: 0}
+  Collider2D: {fileID: 1862333157462451000}
+  isattacked: 0
 --- !u!1 &1560842517373040
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealUnit : MonoBehaviour
+public class HealUnit : Unit
 {
-    // Start is called before the first frame update
-    void Start()
+    //parent의 rigidbody를 받아와서 콜리더의 값을 변경해주는 스크립트
+    private void Awake()
     {
-        
+        DefaultSetting();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        Loop();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        TriggerEnter(collision, "ER");
     }
 }

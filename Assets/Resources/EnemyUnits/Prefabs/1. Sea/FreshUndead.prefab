@@ -564,8 +564,8 @@ GameObject:
   - component: {fileID: 4100447692039914}
   - component: {fileID: 3352850204585591391}
   - component: {fileID: 1565935621844482146}
-  - component: {fileID: 5930190677901356216}
   - component: {fileID: 7491461381597518598}
+  - component: {fileID: 2820141475421111354}
   m_Layer: 0
   m_Name: FreshUndead
   m_TagString: Enemy
@@ -645,29 +645,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5930190677901356216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774549506736774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6b188f96a7dba468863da81cc2d3c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigibody2D: {fileID: 3352850204585591391}
-  Speed: 0
-  Shield: 0
-  Hp: 2
-  Attack: 0
-  HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
-    type: 3}
-  HealthBoxUI: {fileID: 1981045000442047076, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
-    type: 3}
-  Collider2D: {fileID: 7599720942675792964}
-  isattacked: 0
 --- !u!95 &7491461381597518598
 Animator:
   serializedVersion: 3
@@ -687,6 +664,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2820141475421111354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774549506736774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3f1aaa48c3d494e891042ae8eb5335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigibody2D: {fileID: 3352850204585591391}
+  Speed: 0
+  Shield: 0
+  Hp: 2
+  Attack: 0
+  HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
+    type: 3}
+  HealthBoxUI: {fileID: 1981045000442047076, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
+    type: 3}
+  Collider2D: {fileID: 7599720942675792964}
+  isattacked: 0
 --- !u!1 &1792126450156090
 GameObject:
   m_ObjectHideFlags: 0

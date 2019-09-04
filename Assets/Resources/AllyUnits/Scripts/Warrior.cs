@@ -18,5 +18,6 @@ public class Warrior : Unit
     private void OnTriggerEnter2D(Collider2D collision)
     {
         TriggerEnter(collision, "ER");
+        HealTriggerEnter(collision, "AllyHeal");
     }
 }

@@ -29,6 +29,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     protected int isattacked;
     public bool castleAttack;
+    [SerializeField]
+    protected int ishealed;
 
     protected virtual void DefaultSetting()
     {
@@ -48,7 +50,7 @@ public class Unit : MonoBehaviour
         //가비지 콜렉터로 처리하는게 오래 걸려서 setatcive로 비활성화 처리 하는게 메모리로써는 많이 들지만 렉이 안걸림
         transform.Translate(new Vector3(Speed * -gameObject.transform.localScale.x, 0, 0) * Time.deltaTime);
         if (Rigibody2D.angularDrag != 0 && gameObject.tag == "Enemy")
-            Speed = Rigibody2D.angularDrag + SpeedWeight;
+            Speed = Rigibody2D.angularDrag + SpeedWeight;//해적보스 버프
         else
             Speed = Rigibody2D.angularDrag;
 
@@ -73,9 +75,7 @@ public class Unit : MonoBehaviour
 
     public IEnumerator Attacked(int damage, Unit unit)//공격받는 코루틴
     {
-
         isattacked += 1;
-
         while (true)
         {
             yield return new WaitForSeconds(1f);
@@ -93,8 +93,6 @@ public class Unit : MonoBehaviour
             {
                 if (Hp <= 0)
                 {
-
-                    Debug.Log(unit.gameObject.name + "이 " + gameObject.name + "을 처치했다!");
                     unit.isattacked -= 1;//충돌 객체의 공격 여부 false로 지정
                     if (unit.isattacked <= 0 && !unit.castleAttack)
                     {
@@ -102,13 +100,20 @@ public class Unit : MonoBehaviour
                     }
                     Invoke("dead", 0.2f);
                     break;
-
                 }
                 yield return new WaitForEndOfFrame();
             }
       }
         
-
+    IEnumerator Heal()
+    {
+        while(true)
+        {
+            Hp += 1;
+            yield return new WaitForSeconds(0.5f);
+            if (Hp <= 0 || ishealed<=0) break;
+        }       
+    }
 
     public virtual void TriggerEnter(Collider2D collision, string tag)
     {
@@ -119,6 +124,14 @@ public class Unit : MonoBehaviour
             atkcorutin = Attacked(damage,unit);//충돌 객체의 공격력 - 방어력,객체를 받아서 Attacked코루틴 호출
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));
+        }
+    }
+
+    public virtual void HealTriggerEnter(Collider2D collision, string tag)
+    {
+        if (collision.gameObject.CompareTag(tag))
+        {
+            StartCoroutine("Heal");
         }
     }
 

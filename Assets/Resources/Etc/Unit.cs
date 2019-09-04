@@ -31,9 +31,12 @@ public class Unit : MonoBehaviour
     public bool castleAttack;
     [SerializeField]
     protected int ishealed;
+    [SerializeField]
+    protected int maxhp;
 
     protected virtual void DefaultSetting()
     {
+        maxhp = Hp;
         Collider2D.size = new Vector2(Rigibody2D.drag, Collider2D.size.y);//콜리더 사이즈를 drag(사정거리)에 맞게 적용
         Speed = Rigibody2D.angularDrag;// 실제 이동 스피드 적용
         Attack = (int)Rigibody2D.mass; //attack은 mass
@@ -56,16 +59,6 @@ public class Unit : MonoBehaviour
 
         HealthBox.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 0.1f); //hp바 움직이는 코드
         HealthBox.fillAmount = (float)Hp / OriginalHp;
-    }
-
-    protected virtual void Active()
-    {
-        //TODO 특수능력
-    }
-
-    protected virtual void Deactivate()
-    {
-        //특수 능력 종료
     }
 
     public void dead()
@@ -109,9 +102,9 @@ public class Unit : MonoBehaviour
     {
         while(true)
         {
-            Hp += 1;
-            yield return new WaitForSeconds(0.5f);
-            if (Hp <= 0 || ishealed<=0) break;
+            if (maxhp != Hp) Hp += 1;
+            yield return new WaitForSeconds(0.1f);
+            if (Hp <= 0) break;
         }       
     }
 

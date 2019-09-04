@@ -563,6 +563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000486200776288}
   - component: {fileID: 3170701880320374539}
+  - component: {fileID: 7798071253292386425}
   - component: {fileID: 1537786372443092650}
   - component: {fileID: 5962662554623144689}
   m_Layer: 0
@@ -626,6 +627,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7798071253292386425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382362607417324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc04c2162dd8a2418e6f30f7aa4282f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigibody2D: {fileID: 1537786372443092650}
+  Speed: 0
+  Shield: 0
+  Hp: 4
+  Attack: 0
+  HealthBoxPref: {fileID: 8696612659997375515, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
+    type: 3}
+  HealthBoxUI: {fileID: 1981045000442047076, guid: 4f41a10b1dd8f374f8ea10fafa5add0d,
+    type: 3}
+  Collider2D: {fileID: 1742439116848920944}
+  isattacked: 0
+  castleAttack: 0
+  ishealed: 0
+  maxhp: 0
 --- !u!50 &1537786372443092650
 Rigidbody2D:
   serializedVersion: 4
@@ -639,7 +666,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.0001
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}

@@ -115,7 +115,8 @@ public class Unit : MonoBehaviour
         if (collision.gameObject.CompareTag(tag))
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
-            atkcorutin = Attacked(unit.Attack,unit);//충돌 객체의 공격력,객체를 받아서 Attacked코루틴 호출
+            int damage = (unit.Attack - Shield) < 0 ? 0 : unit.Attack - Shield;
+            atkcorutin = Attacked(damage,unit);//충돌 객체의 공격력 - 방어력,객체를 받아서 Attacked코루틴 호출
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));
         }
@@ -139,6 +140,12 @@ public class Unit : MonoBehaviour
         Hp = OriginalHp;
         Rigibody2D.angularDrag = OriginalSpeed;
         isattacked = 0;
+    }
+
+    public void Leech(int power) //흡혈
+    {
+        if(Hp + power <= OriginalHp)
+            Hp += power;
     }
 
 }

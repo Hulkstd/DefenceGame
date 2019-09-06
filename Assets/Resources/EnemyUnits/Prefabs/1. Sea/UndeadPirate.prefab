@@ -725,7 +725,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!95 &8457247083336460514
 Animator:
@@ -769,6 +769,7 @@ MonoBehaviour:
     type: 3}
   Collider2D: {fileID: 8260249193622106294}
   isattacked: 0
+  castleAttack: 0
 --- !u!1 &1722170065070560
 GameObject:
   m_ObjectHideFlags: 0

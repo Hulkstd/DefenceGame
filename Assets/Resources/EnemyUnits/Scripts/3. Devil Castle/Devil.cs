@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealUnit : Unit
+public class Devil : Unit
 {
-    //parent의 rigidbody를 받아와서 콜리더의 값을 변경해주는 스크립트
+    public BossPassive bossPassive;
+
     private void Awake()
     {
         DefaultSetting();
@@ -17,6 +18,11 @@ public class HealUnit : Unit
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TriggerEnter(collision, "ER");
+        TriggerEnter(collision, "AR");
+    }
+
+    private void OnDisable()
+    {
+        bossPassive.Recovered();
     }
 }

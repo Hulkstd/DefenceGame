@@ -451,6 +451,8 @@ MonoBehaviour:
     type: 3}
   Collider2D: {fileID: 1862333157462451000}
   isattacked: 0
+  castleAttack: 0
+  ishealed: 0
 --- !u!1 &1560842517373040
 GameObject:
   m_ObjectHideFlags: 0

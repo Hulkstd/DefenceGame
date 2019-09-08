@@ -268,6 +268,7 @@ MonoBehaviour:
   Collider2D: {fileID: 4488482400652665664}
   isattacked: 0
   castleAttack: 0
+  ishealed: 0
 --- !u!95 &4705022405721273634
 Animator:
   serializedVersion: 3
@@ -538,4 +539,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RB: {fileID: 6262588971096148466}
-  Animator: {fileID: 0}
+  Animator: {fileID: 4705022405721273634}

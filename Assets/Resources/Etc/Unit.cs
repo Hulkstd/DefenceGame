@@ -112,7 +112,7 @@ public class Unit : MonoBehaviour
         {
             Unit unit = collision.GetComponentInParent<Unit>();//충돌하는 객체의 unit클래스를 불러오기
             int damage = (unit.Attack - Shield) < 0 ? 0 : unit.Attack - Shield;
-            atkcorutin = Attacked(damage,unit);//충돌 객체의 공격력 - 방어력,객체를 받아서 Attacked코루틴 호출
+            atkcorutin = Attacked(damage,unit);//충돌 객체의 공격력 - 자신의 방어력,객체를 받아서 Attacked코루틴 호출
             StartCoroutine(atkcorutin);
             StartCoroutine(CheckHP(unit));
         }

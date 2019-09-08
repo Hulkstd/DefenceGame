@@ -31,12 +31,10 @@ public class Unit : MonoBehaviour
     public bool castleAttack;
     [SerializeField]
     protected int ishealed;
-    [SerializeField]
-    protected int maxhp;
 
     protected virtual void DefaultSetting()
     {
-        maxhp = Hp;
+        OriginalHp = Hp;
         Collider2D.size = new Vector2(Rigibody2D.drag, Collider2D.size.y);//콜리더 사이즈를 drag(사정거리)에 맞게 적용
         Speed = Rigibody2D.angularDrag;// 실제 이동 스피드 적용
         Attack = (int)Rigibody2D.mass; //attack은 mass
@@ -102,7 +100,7 @@ public class Unit : MonoBehaviour
     {
         while(true)
         {
-            if (maxhp != Hp) Hp += 1;
+            if (OriginalHp != Hp) Hp += 1;
             yield return new WaitForSeconds(0.1f);
             if (Hp <= 0) break;
         }       

@@ -50,6 +50,7 @@ public class Unit : MonoBehaviour
     {
         //가비지 콜렉터로 처리하는게 오래 걸려서 setatcive로 비활성화 처리 하는게 메모리로써는 많이 들지만 렉이 안걸림
         transform.Translate(new Vector3(Speed * -gameObject.transform.localScale.x, 0, 0) * Time.deltaTime);
+        Debug.Log(name + " 움직임");
         if (Rigibody2D.angularDrag != 0 && gameObject.tag == "Enemy")
             Speed = Rigibody2D.angularDrag + SpeedWeight;//해적보스 버프
         else

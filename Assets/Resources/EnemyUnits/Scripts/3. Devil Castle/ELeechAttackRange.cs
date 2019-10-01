@@ -26,9 +26,9 @@ public class ELeechAttackRange : MonoBehaviour
         while (RB.angularDrag == 0)
         {
             Animator.Play("Attack");
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(.6f);
             RB.GetComponent<Unit>().Leech(leechPower);
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.4f);
         }
     }
 }
